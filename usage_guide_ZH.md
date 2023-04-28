@@ -16,7 +16,7 @@
 
 ① **下載程序。** 首先選擇是否要為此電腦上所有的用戶安裝此輸入法還是僅為此用戶安裝。兩個選項在下方分別有使用`wget`或`curl`的下載方式。只需在 Terminal 中拷貝一行。
 
-僅為此用戶安裝輸入法
+**僅為此用戶安裝輸入法**
 
 - 用`wget`下載
 
@@ -30,7 +30,7 @@ wget -qO - https://raw.githubusercontent.com/purobaburi/manchu-keyboard/main/mac
 curl -s https://raw.githubusercontent.com/purobaburi/manchu-keyboard/main/macos_install_current_user.sh | bash
 ```
 
-為所有用戶安裝輸入法（安裝後需從設置中選擇啟用該輸入法才能使用）
+**為所有用戶安裝輸入法**（安裝後需從設置中選擇啟用該輸入法才能使用）
 
 - 用`wget`下載
 

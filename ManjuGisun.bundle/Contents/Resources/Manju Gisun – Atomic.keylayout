@@ -1,8 +1,8 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Created on 2023-04-26 at 17:00 (EDT)-->
+<!--Created on 2023-04-26-->
 <!--Manju Gisun Keyboard&#x000A;Mode: Atomic (Basic)&#x000A;By: purobaburi&#x000A;License: GPL v3&#x000A;Last updated: April 27, 2023-->
-<!--Last edited on 2023-04-27 at 22:34 (EDT)-->
+<!--Last edited on 2023-04-28-->
 <keyboard group="126" id="-1242" name="Manju Gisun – Atomic" maxout="2">
     <layouts>
         <layout first="0" last="17" mapSet="ANSI" modifiers="Modifiers"/>
@@ -179,7 +179,7 @@
             <key code="31" output=""/>
             <key code="32" output="&#x1861;"/>
             <key code="33" output="{"/>
-            <key code="34" output=""/>
+            <key code="34" output="&#x202F;&#x1873;"/>
             <key code="35" output=""/>
             <key code="36" output="&#x000D;"/>
             <key code="37" output=""/>
@@ -194,7 +194,7 @@
             <key code="46" output=""/>
             <key code="47" output="&#x1871;"/>
             <key code="48" output="&#x0009;"/>
-            <key code="49" output=" "/>
+            <key code="49" output="&#x00A0;"/>
             <key code="50" output="~"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>

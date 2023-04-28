@@ -16,7 +16,7 @@
 
 ① **インストーラー スクリプト** まず、この入力方法を「このコンピュータの全ユーザーにインストールするか」、「このユーザーだけにインストールするか」を選択します。 この 2つの選択肢は、下部に`wget`または`curl`のダウンロード方法として表示されます。 ターミナルでこに下記のコマンドをコピーペーストをしてください。
 
-このユーザーだけインストールする
+**このユーザーだけインストールする**
 
 - `wget`でダウンロード
 
@@ -30,7 +30,7 @@ wget -qO - https://raw.githubusercontent.com/purobaburi/manchu-keyboard/main/mac
 curl -s https://raw.githubusercontent.com/purobaburi/manchu-keyboard/main/macos_install_current_user.sh | bash
 ```
 
-このコンピュータの全ユーザーにインストールする
+**このコンピュータの全ユーザーにインストールする**
 
 - `wget`でダウンロード
 

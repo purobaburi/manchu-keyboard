@@ -16,7 +16,7 @@
 
 ① **Run the install script.** First decide whether you want to install the font package for your own user or for the all users on your computer (this will affect the level of permissions required to perform the installation). Then, in a new terminal window, paste in one of the following commands based on your preference. You could run this installation script using either `wget` or `curl`. Make sure you copy and run **only one line**.
 
-Install for current user only.
+**Install for current user only.**
 
 - Using `wget`
 
@@ -30,7 +30,7 @@ wget -qO - https://raw.githubusercontent.com/purobaburi/manchu-keyboard/main/mac
 curl -s https://raw.githubusercontent.com/purobaburi/manchu-keyboard/main/macos_install_current_user.sh | bash
 ```
 
-Install for all users on the computer.
+**Install for all users on the computer.**
 
 - Using `wget`
 

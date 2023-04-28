@@ -1,8 +1,8 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
-<!--Created on 2023-04-26 at 17:00 (EDT)-->
+<!--Created on 2023-04-26-->
 <!--Manju Gisun Keyboard&#x000A;Mode: Full (QMode + Dead Keys)&#x000A;By: purobaburi&#x000A;License: GPL v3&#x000A;Last updated: April 27, 2023-->
-<!--Last edited on 2023-04-27 at 22:34 (EDT)-->
+<!--Last edited on 2023-04-28-->
 <keyboard group="126" id="-23918" name="Manju Gisun – Full" maxout="2">
     <layouts>
         <layout first="0" last="17" mapSet="ANSI" modifiers="Modifiers"/>
@@ -89,7 +89,7 @@
             <key code="46" output="&#x182E;"/>
             <key code="47" action="&#x1809;"/>
             <key code="48" output="&#x0009;"/>
-            <key code="49" output=" "/>
+            <key code="49" action=" "/>
             <key code="50" output="`"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
@@ -179,7 +179,7 @@
             <key code="31" output=""/>
             <key code="32" output="&#x1861;"/>
             <key code="33" output="{"/>
-            <key code="34" output=""/>
+            <key code="34" output="&#x202F;&#x1873;"/>
             <key code="35" output=""/>
             <key code="36" output="&#x000D;"/>
             <key code="37" output=""/>
@@ -194,7 +194,7 @@
             <key code="46" output=""/>
             <key code="47" output="&#x1871;"/>
             <key code="48" output="&#x0009;"/>
-            <key code="49" output=" "/>
+            <key code="49" action="  1"/>
             <key code="50" output="~"/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
@@ -719,7 +719,7 @@
             <key code="46" output=""/>
             <key code="47" output=""/>
             <key code="48" output="&#x0009;"/>
-            <key code="49" output=""/>
+            <key code="49" action="action"/>
             <key code="50" output=""/>
             <key code="51" output="&#x0008;"/>
             <key code="53" output="&#x001B;"/>
@@ -800,8 +800,20 @@
         </keyMap>
     </keyMapSet>
     <actions>
+        <action id=" ">
+            <when state="none" output=" "/>
+            <when state="AQMode" output="&#x00A0;"/>
+        </action>
+        <action id="  1">
+            <when state="none" output=" "/>
+            <when state="AQMode" output="&#x00A0;"/>
+        </action>
         <action id="AQMode">
             <when state="none" next="AQMode"/>
+        </action>
+        <action id="action">
+            <when state="none" output=""/>
+            <when state="AQMode" output="&#x00A0;"/>
         </action>
         <action id="&#x1808;">
             <when state="none" output="&#x1808;"/>
@@ -865,6 +877,7 @@
         </action>
         <action id="&#x1873;">
             <when state="none" output="&#x1873;"/>
+            <when state="AQMode" output="&#x202F;&#x1873;"/>
             <when state="connector-ch" output="&#x1871;&#x1873;"/>
             <when state="connector-zh" output="&#x1877;&#x1873;"/>
         </action>
@@ -880,7 +893,7 @@
     <terminators>
         <when state="AQMode" output=""/>
         <when state="connector-c" output="&#x1834;"/>
-        <when state="connector-ch" output=""/>
+        <when state="connector-ch" output="&#x1834;&#x1865;"/>
         <when state="connector-d" output="&#x1869;"/>
         <when state="connector-j" output="&#x1835;"/>
         <when state="connector-n" output="&#x1828;"/>
@@ -888,6 +901,6 @@
         <when state="connector-t" output="&#x1868;"/>
         <when state="connector-ts" output="&#x186E;"/>
         <when state="connector-z" output="&#x1870;"/>
-        <when state="connector-zh" output=""/>
+        <when state="connector-zh" output="&#x1870;&#x1865;"/>
     </terminators>
 </keyboard>

@@ -14,6 +14,74 @@
 
 ### MacOS
 
+① **Run the install script.** First decide whether you want to install the font package for your own user or for the all users on your computer (this will affect the level of permissions required to perform the installation). Then, in a new terminal window, paste in one of the following commands based on your preference. You could run this installation script using either `wget` or `curl`. Make sure you copy and run **only one line**.
+
+Install for current user only.
+
+- Using `wget`
+
+```bash
+wget -qO - https://raw.githubusercontent.com/purobaburi/manchu-keyboard/main/macos_install_current_user.sh | bash
+```
+
+- Using `curl`
+
+```bash
+curl -s https://raw.githubusercontent.com/purobaburi/manchu-keyboard/main/macos_install_current_user.sh | bash
+```
+
+Install for all users on the computer.
+
+- Using `wget`
+
+```bash
+wget -qO - https://raw.githubusercontent.com/purobaburi/manchu-keyboard/main/macos_install_all_users.sh | bash
+```
+
+- Using `curl`
+
+```bash
+curl -s https://raw.githubusercontent.com/purobaburi/manchu-keyboard/main/macos_install_all_users.sh | bash
+```
+
+If you are trying to install a specific target version, e.g. `v0.1.0-alpha`, you can either pass it directly to the script by adding `-s v0.1.0-alpha` to the end.
+
+```bash
+(Installer Script ...) | Bash -s "v0.1.0-alpha"
+```
+
+alternatively, you can set the environment variable
+
+```bash
+export MANJUGISUN_VERSION="v0.1.0-alpha"
+```
+
+If both are taken, the passed argument will take precedence over the environment variable. Replace `v0.1.0-alpha` with the version you want to install. If this variable is not set, the latest version will be installed
+
+② Once the installation successfully completes, you will need to log out and back into your account. You could also achieve this by restarting your computer.
+
+③ Go to System Preferences > Keyboard > Input Sources > then press the "+" button towards the bottom left of the screen. Then, locate and add the Manchu keyboard(s) (see [the options](#keyboard-configuration-options-and-design-philosophy)). Additionally, for each keyboard you add, you have the option to tick the "Use the Caps Lock key to switch to and from last used input source" checkbox.
+
+![capslock option](/assets/capslock_option_EN.png)
+
+### Uninstalling
+
+Uninstalling is simple: you can either do it manually by deleting the `ManjuGisun.bundle` files from `Library/Keyboard Layouts` (for all users) and `~/Library/Keyboard Layouts` (for current user only; depending on where you installed it).
+
+Another option is to use the uninstall script, which will indiscriminately delete all `ManjuGisun.bundle` files located in the two `Keyboard Layout` folders.
+
+- Using `wget`
+
+```bash
+wget -qO - https://raw.githubusercontent.com/purobaburi/manchu-keyboard/main/macos_uninstall_all.sh | bash
+```
+
+- Using `curl`
+
+```bash
+curl -s https://raw.githubusercontent.com/purobaburi/manchu-keyboard/main/macos_uninstall_all.sh | bash
+```
+
 ## Keyboard Configuration Options and Design Philosophy
 
 - Part of the design philosophy of this keyboard is to deviate slightly from Möllendorf and restore the use of pinyin for the Manchu characters which were meant to transliterate Chinese, mostly located under the `q`/SHIFT keys. Of course, this does not override the default Möllendorf keyboard configuration and could provide more convenience for some users. More details in the [Speical Characters](#special-characters).
@@ -45,7 +113,7 @@ Non-Manchu Consonants for Transliteration: Möllendorf vs. Pinyin.
 - \[1\]: _Escaping Connected Characters_: if you want to write `n` next to `g` without getting the character for `ng`, then add an apostrophe in between like so: `n'g`. Tip: if you want to leave Q-Mode without having to enter something, the apostrophe key works well for that too.
 - \[2\]: The alt keys, being reserved for entering characters in special occassions, cannot form special characters from multi-character sequences. Currently, it only applies to `⌥t` as `⌥t`+`y` will not get you `tsy` (ᡮᡟ). In the atomic keyboards, please use `Cy` instead (see the [design philosophy statement](#keyboard-configuration-options-and-design-philosophy)).
 - \[3\]: The _pinyin_ sequences `chi` (ᡱᡳ) and `zhi` (ᡷᡳ) are special. To prevent unexpected sequences, the digraphs `ch` and `zh` will not generate ᡷ and ᡱ, use the other methods instead.
-- \[4\]:
+- \[4\]: <!--I really forgot what I was trying to say here.-->
 - \[5\]: Special punctuation: the boundary markers ᠇ and ᠊ are not technically part of the Manchu script. However, they serve useful and important purposes in digital Manchu. For example, the Nirugu (᠊) can be used to denote the initial, medial, and final position forms of letters: ᠠ᠈ ᠠ᠊᠈ ᠊ᠠ᠊᠈ ᠊ᠠ᠉
 - \[6\]: The No-Break Space (NBSP), Narrow No-Break Space (NNBSP), and Zero-Width Junction (ZWJ) are unicode characters serving special functions in many digital scripts. In digital Manchu, the NBSP can be used to ensure that line breaks don't occur between certain words and their suffixes. The NNBSP is often used in front of ᡳ to create the genitive -i ( ᡳ), and it does not work on many fonts. Similarly, the ZWJ is also used to control which form the letters take, but it similarly faces technical/compatibility issues with fonts. The rule of thumb is that the Nirugu is the most reliable connector–its only disadvantage is that it is visible.
 - \[7\]: The Mongolian Verb Separator (MVB) and Free Variant Selectors (FVS) are non-printing unicode characters that allows a certain form of the letter to be picked arbitrarily. However, they don't work with most fonts. They do work with the font Noto Sans Mongolian (used by Wikipedia) and are hence included on this keyboard for completeness.

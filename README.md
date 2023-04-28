@@ -9,6 +9,8 @@ Right now, this keyboard can only be used on MacOS (10.5 or later). For other pl
 
 [manchu-keyman]: https://www.manchustudiesgroup.org/typing-manchu/
 
+## Usage Guides・ガイド
+
 - [キーボード使用ご案内](/usage_guide_JA.md)
 - [鍵盤使用指南](/usage_guide_ZH.md)
 - [Keyboard Usage Guide](/usage_guide_EN.md)
@@ -26,9 +28,11 @@ To contribute to the current keyboard, download [Ukelele][ukelele] 3.5+ and edit
 
 [ukelele]: [https://software.sil.org/ukelele/]
 
-Todos:
+### 残り任務:
 
 - [ ] finish usage guide JA
-- [ ] finish usage guide EN
-- [ ] finish usage guide CN
+- [x] finish usage guide EN
+- [x] finish usage guide CN
 - [ ] improve UX (user experience) on install scripts.
+
+- Usage guides might need more polishing.

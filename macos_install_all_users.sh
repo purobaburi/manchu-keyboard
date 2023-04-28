@@ -8,7 +8,7 @@
 #                             #
 ###############################
 
-LATEST="v0.1.0-alpha"
+LATEST="v0.1.1-alpha"
 
 TARGET_DIRECTORY="/Library/Keyboard Layouts"
 TEMP_STASH=".manjugisun_temp_stash_$RANDOM" # name of temp stash

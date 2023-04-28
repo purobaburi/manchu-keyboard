@@ -30,7 +30,7 @@ To contribute to the current keyboard, download [Ukelele][ukelele] 3.5+ and edit
 
 ### 残り任務:
 
-- [ ] finish usage guide JA
+- [x] finish usage guide JA
 - [x] finish usage guide EN
 - [x] finish usage guide CN
 - [ ] improve UX (user experience) on install scripts.

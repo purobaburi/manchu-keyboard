@@ -13,25 +13,35 @@ LATEST="v0.1.0-alpha"
 TARGET_DIRECTORY="$(cd ~; pwd)/Library/Keyboard Layouts"
 TEMP_STASH=".manjugisun_temp_stash_$RANDOM" # name of temp stash
 
-VERSION="${MANJUgisun_VERSION}"
-if [ -z $VERSION ]; then
-    VERSION=$LATEST
+if [ -n "$1" ]; then
+    VERSION="$1" # get version as passed variable
+else
+    VERSION="${MANJUGISUN_VERSION}" # get version as env var
 fi
+
+if [ -z "$VERSION" ]; then
+    VERSION=$LATEST # Version fallback.
+fi
+echo
+echo "TARGET VERSION: $VERSION"
+
 LINK="https://github.com/purobaburi/manchu-keyboard/releases/download/${VERSION}/ManjuGisun_macos_${VERSION}.zip"
 ZIPFILE="$(basename "$LINK")"
 
+echo "Creating/clearing temporary directory $(pwd)/${TEMP_STASH}/..."
 rm -rf "$TEMP_STASH" &> /dev/null
-# abort if TEMP_STASH cannot be created.
-mkdir "$TEMP_STASH" || \
-    echo; \
-    echo "Failed to create a temporary caching directory. Please run this script in a directory in which you have writing permissions."; \
-    echo; \
-    echo "Installation Failed/Aborted"; \
-    echo; \
+# abort if TEMP_STASH cannot be created. # ls .manjugisun_temp*
+mkdir "$TEMP_STASH" || manjugisun_err=1
+echo $manjugisun_err
+if [ -n "$manjugisun_err" ]; then # catch error
+    echo
+    echo "Failed to create a temporary caching directory. Please run this script in a directory in which you have writing permissions."
+    echo
+    echo "Installation Failed/Aborted"
+    echo
     exit
-
+fi
 cd "$TEMP_STASH"
-echo "Creating/clearing temporary directory $(pwd) ..."
 
 if command -v wget &> /dev/null; then
     echo
@@ -92,7 +102,7 @@ echo "You may also verify that the script is legitimate. Exit this script via CT
 # get permission, or else don't try other commands
 sudo echo &> /dev/null && (sudo rm -rf "${TARGET_DIRECTORY}/${BUNDLE}" 2> /dev/null; (sudo mv "$BUNDLE" "$TARGET_DIRECTORY" || manjugisun_err=2)) || manjugisun_err=1
 
-if [ -n ${manjugisun_err+x} ]; then
+if [ -n "$manjugisun_err" ]; then
     echo
     echo "Failed to get sudo permissions..."
     echo

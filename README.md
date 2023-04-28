@@ -31,3 +31,4 @@ Todos:
 - [ ] finish usage guide JA
 - [ ] finish usage guide EN
 - [ ] finish usage guide CN
+- [ ] improve UX (user experience) on install scripts.
